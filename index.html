@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./music.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js "></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="music_container">
+        <div class="music_them">
+            <div class="music_title">
+                <p>Now playing:</p>
+                <h3>Tên bài hát</h3>
+            </div>
+            <div class="music_img">
+                <div class="img_radius" style="background-image: url('');background-size: cover;">
+                </div>
+                <div class="music_ware">
+                    <span class="music_ware-item"></span>
+                    <span class="music_ware-item"></span>
+                    <span class="music_ware-item"></span>
+                    <span class="music_ware-item"></span>
+                    <span class="music_ware-item"></span>
+                </div>
+            </div>
+            <ul class="music_btn">
+                <li class="btn_item btn_loop"><i class="fas fa-undo-alt fa-2x"></i></li>
+                <li class="btn_item btn_pre"><i class="fas fa-step-backward fa-2x"></i></li>
+                <li class="btn_item btn_play" style="color:rgb(249, 0, 58);">
+                    <i class="fas fa-play-circle fa-4x"></i>
+                    <i class="fas fa-pause-circle fa-4x active"></i>
+                </li>
+                <li class="btn_item btn_next"><i class="fas fa-step-forward fa-2x"></i></li>
+                <li class="btn_item btn_random"><i class="fas fa-random fa-2x"></i></li>
+            </ul>
+            <div class="music_autoplay">
+                <input type="range" name="time_song" class="slider" id="time_play" step="1" min="1" max="100" value="0">
+                <audio class="play_audio" src=""></audio>
+                <div class="test"></div>
+            </div>
+        </div>
+        <div class="music_list">
+
+        </div>
+    </div>
+    <script>
+    </script>
+    <script src="./listmusic.js"></script>
+</body>
+
+</html>
