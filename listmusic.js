@@ -6,10 +6,12 @@ const btn_next = document.querySelector('li.btn_next');
 const btn_pre = document.querySelector('li.btn_pre');
 const btn_loop = document.querySelector('li.btn_loop');
 const btn_random = document.querySelector('li.btn_random');
+const btn_dark = document.querySelector("input[type='checkbox'] ");
 const PLAYER_MUSIC_STORAGE_KEY = 'PLAY_MUSIC';
 const app = {
     isloop: true,
     israndom: true,
+    isDrak: false,
     indexmusic: 0,
     listmusic: [{
             name: `Rap chậm thôi`,
@@ -213,6 +215,19 @@ const app = {
             }
             app.setconfig('israndom', app.israndom);
         };
+        btn_dark.onclick = function() {
+            const main = document.querySelector('.music_container');
+            if (btn_dark.checked) {
+                main.classList.remove('light');
+                main.classList.add('drak');
+                app.isDrak = true;
+            } else {
+                main.classList.remove('drak');
+                main.classList.add('light');
+                app.isDrak = false;
+            }
+            app.setconfig('isDrak', app.isDrak);
+        };
     },
     defineProperties: function() {
         Object.defineProperty(this, 'currentsong', {
@@ -268,6 +283,7 @@ const app = {
     load_config: function() {
         this.isloop = this.config.isloop;
         this.israndom = this.config.israndom;
+        this.isDrak = this.config.isDrak;
     },
     start: function() {
         this.load_config();
@@ -292,6 +308,15 @@ const app = {
         } else {
             btn_loop.classList.remove('active_color');
             this.isloop = true;
+        }
+        btn_dark.checked = this.isDrak;
+        const main = document.querySelector('.music_container');
+        if (btn_dark.checked) {
+            main.classList.remove('light');
+            main.classList.add('drak');
+        } else {
+            main.classList.remove('drak');
+            main.classList.add('light');
         }
     },
 };
