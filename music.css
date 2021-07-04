@@ -13,13 +13,17 @@ body {
     width: 25%;
     height: 600px;
     position: relative;
-    background: rgb(239, 238, 238);
     display: block;
     border-radius: 10px;
     border: 1px solid silver;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
     margin: 0 auto;
     overflow-y: scroll;
+    transition: 0.5s;
+}
+
+.light {
+    background: rgb(239, 238, 238);
 }
 
 .music_container::-webkit-scrollbar-track {
@@ -43,6 +47,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 0 1px silver;
     position: fixed;
+    transition: 0.5s;
 }
 
 .music_them .music_title {
@@ -205,6 +210,10 @@ body {
     z-index: 12;
 }
 
+.drak .slider {
+    border: 1px solid #000000;
+}
+
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 15px;
@@ -236,7 +245,7 @@ body {
 .music_container .music_list {
     width: 100%;
     height: 100%;
-    margin-top: 370px;
+    margin-top: 365px;
     padding: 1px 0px;
 }
 
@@ -249,6 +258,7 @@ body {
     display: flex;
     justify-content: space-evenly;
     box-shadow: 0 0 0 1px rgb(199, 198, 198);
+    transition: 0.5s;
 }
 
 .music_item .item_img {
@@ -301,6 +311,105 @@ body {
 
 .active_item .item_icon {
     color: white;
+}
+
+.dark_light {
+    position: fixed;
+    top: 1%;
+    left: 1%;
+    z-index: 111;
+    width: 80px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+
+.check {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 20px;
+    background: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid black;
+    transition: ease-in 0.5s;
+}
+
+.dark_light i {
+    color: black;
+}
+
+input[type="checkbox"]:checked~i {
+    color: white;
+}
+
+input[type="checkbox"]:checked~.check {
+    background: #000000;
+    border: 1px solid white;
+}
+
+.check::before {
+    content: ' ';
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: silver;
+    transform: translateX(0%);
+    transition: 0.5s;
+}
+
+input[type="checkbox"]:checked~.check::before {
+    transform: translateX(125%);
+}
+
+.drak {
+    background: #000000dd;
+}
+
+.drak .music_them {
+    background: #000000;
+}
+
+.drak .music_them .music_title {
+    color: white;
+}
+
+.drak .music_them .music_title p {
+    color: rgb(252, 252, 252);
+}
+
+.drak .music_btn .btn_item {
+    color: #fff;
+}
+
+.drak .active_color {
+    color: rgb(249, 0, 79) !important;
+}
+
+.drak .music_list .music_item {
+    background: #000000;
+    border: 1px solid #fff;
+}
+
+.drak .item_img .item_img-radius {
+    border: 1px solid #fff;
+}
+
+.drak .item_title .title li {
+    color: #fff;
 }
 
 @media only screen and (max-width:450px) {
